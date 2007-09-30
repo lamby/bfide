@@ -61,6 +61,11 @@ class View(object):
         self['toolbutton_run'].set_sensitive(not is_running)
         self['toolbutton_stop'].set_sensitive(is_running)
 
+        # Remove the selection on stop
+        if is_running is False:
+            buf = self['textview_editor'].get_buffer()
+            buf.select_range(buf.get_start_iter(), buf.get_start_iter())
+
     def set_selected_cell(self, num):
         self['treeview_memory'].get_selection().select_path(num)
 
