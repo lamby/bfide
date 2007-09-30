@@ -1,3 +1,4 @@
+import gtk
 import gobject
 
 class Controller(object):
@@ -20,6 +21,9 @@ class Controller(object):
 
     def on_toolbutton_stop_clicked(self, *_):
         self.stop()
+
+    def on_window_main_delete_event(self, *_):
+        gtk.main_quit()
 
     def exec_next(self):
         try:
