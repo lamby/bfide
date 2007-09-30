@@ -35,6 +35,7 @@ class View(object):
         columns = (
             ('Address', lambda x: "%03d (0x%02x)" % (x[0], x[0])),
             ('Value', lambda x: "%03d (0x%02x) %s" \
+                # Prints a sane ASCII representation
                 % (x[1], x[1], (x[1] >= 33 and x[1] <= 126) and chr(x[1]) or ""))
         )
 
