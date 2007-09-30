@@ -63,3 +63,10 @@ class View(object):
 
     def set_selected_cell(self, num):
         self['treeview_memory'].get_selection().select_path(num)
+
+    def set_selected_opcode(self, num):
+        buf = self['textview_editor'].get_buffer()
+        iter = buf.get_iter_at_offset(num)
+        iter2 = buf.get_iter_at_offset(num)
+        iter2.forward_char()
+        buf.select_range(iter, iter2)

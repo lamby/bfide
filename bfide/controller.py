@@ -44,6 +44,7 @@ class Controller(object):
                 if fn and self.running:
                     fn()
                     self.view.set_selected_cell(self.model.pointer)
+                    self.view.set_selected_opcode(self.program_counter)
                     gobject.timeout_add(self.view.get_delay(), self.exec_next)
 
         except IndexError:
