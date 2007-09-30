@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.2.0 on Tue Sep 25 15:46:34 2007 by lamby@david-->
+<!--Generated with glade3 3.2.0 on Sun Sep 30 01:40:40 2007 by lamby@david-->
 <glade-interface>
   <widget class="GtkWindow" id="window1">
     <property name="width_request">750</property>
@@ -213,6 +213,7 @@
               </widget>
               <packing>
                 <property name="expand">False</property>
+                <property name="homogeneous">False</property>
               </packing>
             </child>
             <child>
@@ -234,6 +235,53 @@
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <property name="stock_id">gtk-stop</property>
                 <signal name="clicked" handler="on_toolbutton_stop_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkSeparatorToolItem" id="toolbutton2">
+                <property name="visible">True</property>
+                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolItem" id="toolbutton_slider">
+                <property name="visible">True</property>
+                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                <child>
+                  <widget class="GtkHBox" id="hbox1">
+                    <property name="visible">True</property>
+                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <child>
+                      <widget class="GtkLabel" id="label1">
+                        <property name="visible">True</property>
+                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="label" translatable="yes">Delay (ms)</property>
+                      </widget>
+                      <packing>
+                        <property name="padding">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkHScale" id="hscale_speed">
+                        <property name="width_request">138</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="adjustment">5 0 26 1 10 10</property>
+                        <property name="digits">0</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                </child>
               </widget>
               <packing>
                 <property name="expand">False</property>
@@ -265,9 +313,13 @@
                     <property name="can_focus">True</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="headers_clickable">True</property>
+                    <property name="rules_hint">True</property>
                   </widget>
                 </child>
               </widget>
+              <packing>
+                <property name="resize">False</property>
+              </packing>
             </child>
             <child>
               <widget class="GtkScrolledWindow" id="scrolledwindow3">
@@ -283,12 +335,7 @@
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="text" translatable="yes">&gt;++++++[&lt;++++++++++&gt;-]&gt;++++++[&lt;++++++++++&gt;-]&lt;++&gt;++++++++++&gt;&gt;+++++[&lt;++++++++++&gt;
 -]&lt;---&gt;&gt;+++++++++[&lt;++++++++++&gt;-]&lt;++&gt;&gt;+++[&lt;++++++++++&gt;-]&lt;+++++&gt;&gt;+++[&lt;++++++++++
-&gt;-]&lt;++&gt;,&gt;+++++[&lt;----------&gt;-]&lt;++&gt;[-]&lt;[&gt;+&gt;+&lt;&lt;-]&gt;&gt;[&lt;&lt;+&gt;&gt;-]&lt;[[&gt;+&gt;+&lt;&lt;-]&gt;&gt;[&lt;&lt;+&gt;&gt;-]&lt;
-[&lt;&lt;&lt;.&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;&lt;&lt;.&gt;&gt;&gt;&gt;[&gt;&gt;+&gt;+&lt;&lt;&lt;-]&gt;&gt;&gt;[&lt;&lt;&lt;+&gt;&gt;&gt;-]&lt;&lt;[&gt;&gt;+&gt;+&lt;&lt;&lt;-]&gt;&gt;&gt;[&lt;&lt;&lt;+&gt;&gt;&gt;-]&lt;[-&lt;-&gt;]
-&lt;[&lt;&lt;&lt;&lt;..&gt;&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;&lt;.&lt;&lt;.&gt;&gt;&gt;&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;.&gt;&gt;&gt;&gt;&gt;&gt;&gt;[&lt;&lt;..&gt;&gt;&gt;+&gt;+&lt;&lt;-]&gt;&gt;[&lt;&lt;+&gt;&gt;-]&lt;&lt;&lt;&lt;&lt;&lt;
-&lt;&lt;.&gt;.&gt;&gt;&gt;&gt;&gt;&gt;[&lt;[&gt;&gt;+&gt;+&lt;&lt;&lt;-]&gt;&gt;&gt;[&lt;&lt;&lt;+&gt;&gt;&gt;-]&lt;&lt;[&gt;&gt;+&gt;+&lt;&lt;&lt;-]&gt;&gt;&gt;[&lt;&lt;&lt;+&gt;&gt;&gt;-]&lt;[-&lt;-&gt;]&lt;[&lt;&lt;&lt;.&gt;&gt;
-&gt;-]&lt;&lt;&lt;.&lt;&lt;.&gt;&gt;&gt;&gt;[&gt;+&gt;+&lt;&lt;-]&gt;&gt;[&lt;&lt;+&gt;&gt;-]&lt;-[&lt;&lt;&lt;&lt;..&gt;&gt;&gt;&gt;-]&lt;&lt;&lt;&lt;&lt;&lt;.&lt;.&gt;&gt;&gt;&gt;&gt;&gt;-] &lt;&lt;-lamby-&gt;&gt;
-</property>
+&gt;-]&lt;++&gt;</property>
                   </widget>
                 </child>
               </widget>
