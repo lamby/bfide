@@ -12,6 +12,9 @@ class Model(object):
         for i in range(256):
             self.memory.append((i,0))
 
+    def get_value_at_pointer(self):
+        return self.memory[self.pointer][1]
+
     # >
     def inc_pointer(self):
         self.pointer += 1

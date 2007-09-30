@@ -16,6 +16,7 @@ class Controller(object):
 
         self.program = self.view.get_editor_text()
         self.program_counter = 0
+        self.stack = []
         self.running = True
         self.exec_next()
 
@@ -34,6 +35,8 @@ class Controller(object):
                     '<' : self.model.dec_pointer,
                     '+' : self.model.inc_at_pointer,
                     '-' : self.model.dec_at_pointer,
+                    '[' : self.push_stack,
+                    ']' : self.pop_stack,
                 }.get(self.program[self.program_counter], None)
 
                 self.program_counter += 1
@@ -45,6 +48,14 @@ class Controller(object):
 
         except IndexError:
             self.stop()
+
+    def push_stack(self):
+        self.stack.append(self.program_counter)
+
+    def pop_stack(self):
+        val = self.stack.pop()
+        if self.model.get_value_at_pointer() != 0:
+            self.program_counter = val - 1
 
     def stop(self):
         self.running = False
