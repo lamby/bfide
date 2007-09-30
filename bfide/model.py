@@ -1,11 +1,29 @@
 import gtk
 import gobject
 
-class Model(gtk.ListStore):
+class Model(object):
     def __init__(self):
-        gtk.ListStore.__init__(self, int, int)
+        self.memory = gtk.ListStore(int, int)
         self.reset()
 
     def reset(self):
+        self.pointer = 0
+        self.memory.clear()
         for i in range(256):
-            self.append((i,0))
+            self.memory.append((i,0))
+
+    # >
+    def inc_pointer(self):
+        self.pointer += 1
+
+    # <
+    def dec_pointer(self):
+        self.pointer -= 1
+
+    # +
+    def inc_at_pointer(self):
+        self.memory[self.pointer][1] += 1
+
+    # -
+    def dec_at_pointer(self):
+        self.memory[self.pointer][1] -= 1

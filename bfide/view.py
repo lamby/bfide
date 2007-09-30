@@ -21,6 +21,7 @@ class View(object):
 
     def setup(self, model_memory):
         self['treeview_memory'].set_model(model_memory)
+
         def my_render(column, cell_renderer, tree_model, iter, format_func):
             address = tree_model.get_value(iter, 0)
             value = tree_model.get_value(iter, 1)
@@ -53,3 +54,6 @@ class View(object):
         self['toolbutton_save'].set_sensitive(not is_running)
         self['toolbutton_run'].set_sensitive(not is_running)
         self['toolbutton_stop'].set_sensitive(is_running)
+
+    def set_selected_cell(self, num):
+        self['treeview_memory'].get_selection().select_path(num)
