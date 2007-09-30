@@ -46,6 +46,9 @@ class View(object):
         buf = self['textview_editor'].get_buffer()
         return buf.get_text(buf.get_start_iter(), buf.get_end_iter())
 
+    def get_delay(self):
+        return int(self['hscale_speed'].get_value())
+
     def set_running(self, is_running):
         self['textview_editor'].set_sensitive(not is_running)
 
