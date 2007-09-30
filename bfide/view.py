@@ -23,6 +23,7 @@ class View(object):
         self.setup_columns()
         self['treeview_memory'].set_model(model_memory)
         self['textview_editor'].modify_font(pango.FontDescription('monospace'))
+        self['hscale_speed'].connect('format-value', lambda scale, value: "%d ms" % value)
 
     def setup_columns(self):
         def my_render(column, cell_renderer, tree_model, iter, format_func):
