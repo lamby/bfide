@@ -20,8 +20,11 @@ class View(object):
         return True
 
     def setup(self, model_memory):
+        self.setup_columns()
         self['treeview_memory'].set_model(model_memory)
+        self['textview_editor'].modify_font(pango.FontDescription('monospace'))
 
+    def setup_columns(self):
         def my_render(column, cell_renderer, tree_model, iter, format_func):
             address = tree_model.get_value(iter, 0)
             value = tree_model.get_value(iter, 1)
@@ -39,8 +42,6 @@ class View(object):
             column = gtk.TreeViewColumn(label, cell_renderer)
             column.set_cell_data_func(cell_renderer, my_render, format_func)
             self['treeview_memory'].append_column(column)
-
-        self['textview_editor'].modify_font(pango.FontDescription('monospace'))
 
     def get_editor_text(self):
         buf = self['textview_editor'].get_buffer()
